@@ -1,7 +1,7 @@
 import { shallowMount } from '@vue/test-utils'
-import Counter from '../Counter.vue'
+import Home from '../index.vue'
 
-const wrapper = shallowMount(Counter)
+const wrapper = shallowMount(Home)
 
 describe('Counter.vue', () => {
   it('Deve exister um elemento h3', () => {

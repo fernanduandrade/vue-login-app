@@ -3,7 +3,7 @@ import current from '../data/current.json'
 
 export type User = {
     name: string,
-    username: string
+    username: string,
 }
 
 export type UserList = Array<User & { password: string }>

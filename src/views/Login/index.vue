@@ -2,7 +2,7 @@
   <form @submit.prevent="onSubmit">
     <div>
       <label>Usuário</label>
-      <StyledInput
+      <input
         v-model="form.username"
         type="text"
         required
@@ -11,7 +11,7 @@
     </div>
     <div class="form">
       <label>Senha</label>
-      <St
+      <input
         v-model="form.password"
         type="password"
         required
@@ -27,20 +27,24 @@
 
 import { defineComponent, reactive } from 'vue'
 import userStore from '@/store/user'
-import { StyledInput } from './styles'
+import { useRouter } from 'vue-router'
 
 export default defineComponent({
-  components: {
-    StyledInput
-  },
+  name: 'Login',
   setup () {
     const form = reactive({
       username: '',
       password: ''
     })
 
-    const onSubmit = () => {
-      userStore.login(form.username, form.password)
+    const router = useRouter()
+
+    const onSubmit = async () => {
+      const response = await userStore.login(form.username, form.password)
+      console.log(response)
+      if (response) {
+        router.push({ name: 'home' })
+      }
     }
 
     return { form, userStore, onSubmit }

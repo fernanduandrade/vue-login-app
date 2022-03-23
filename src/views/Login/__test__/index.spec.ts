@@ -1,7 +1,7 @@
 import { shallowMount } from '@vue/test-utils'
-import Form from '../Form.vue'
+import Login from '../index.vue'
 
-const wrapper = shallowMount(Form)
+const wrapper = shallowMount(Login)
 
 describe('Form.vue', () => {
   it('Deve montar o componente', () => {

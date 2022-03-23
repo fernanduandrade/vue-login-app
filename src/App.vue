@@ -1,29 +1,35 @@
 <template>
-  <div v-if="!userStore.getters.isLogged">
-    <Form />
+  <Nav />
+  <div class="container">
+    <router-view v-slot="{Component}">
+      <component :is="Component" :key="$route.path"></component>
+    </router-view>
+  <!-- <Login /> -->
   </div>
-  <div v-else>
-    <Counter />
-  </div>
-  <button v-if="userStore.getters.isLogged" @click="userStore.logout">SAIR</button>
 </template>
 
 <script lang="ts">
 import '@/styles/global-style'
-import { defineComponent, onMounted } from 'vue'
-import Counter from './components/Counter/Counter.vue'
-import Form from '@/components/Form/Form.vue'
-import userStore from '@/store/user'
+import { defineComponent } from 'vue'
+import Nav from '@/components/Nav/index.vue'
 
 export default defineComponent({
-  name: 'App',
   components: {
-    Counter,
-    Form
+    Nav
   },
-  setup () {
-    // onMounted(userStore.getUser)
-    return { userStore }
-  }
+  name: 'App'
 })
 </script>
+<style lang="css">
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+.container{
+  display: flex;
+}
+</style>
