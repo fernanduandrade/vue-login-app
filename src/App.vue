@@ -1,21 +1,13 @@
 <template>
-  <Nav />
-  <div class="container">
-    <router-view v-slot="{Component}">
-      <component :is="Component" :key="$route.path"></component>
-    </router-view>
-  <!-- <Login /> -->
-  </div>
+    <router-view></router-view>
 </template>
 
 <script lang="ts">
 import '@/styles/global-style'
 import { defineComponent } from 'vue'
-import Nav from '@/components/Nav/index.vue'
 
 export default defineComponent({
   components: {
-    Nav
   },
   name: 'App'
 })

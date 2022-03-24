@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="onSubmit">
-    <div>
+    <div class="username">
       <label>Usuário</label>
       <input
         v-model="form.username"
