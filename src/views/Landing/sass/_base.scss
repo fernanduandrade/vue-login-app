@@ -1,0 +1,10 @@
+$default: red;
+$aaa: #333;
+
+.container {
+    background-color: $aaa;
+
+    &-test {
+	background-color: $default;
+    }
+}

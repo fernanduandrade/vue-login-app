@@ -1,0 +1,19 @@
+[11:25:46.365] Global cache location 'C:/Users/Fernando/AppData/Local/Microsoft/TypeScript/4.1', safe file path 'c:/users/fernando/desktop/login-app/node_modules/typescript/lib/typingsafelist.json', types map path c:/users/fernando/desktop/login-app/node_modules/typescript/lib/typesmap.json
+[11:25:46.367] Processing cache location 'C:/Users/Fernando/AppData/Local/Microsoft/TypeScript/4.1'
+[11:25:46.367] Trying to find 'C:/Users/Fernando/AppData/Local/Microsoft/TypeScript/4.1/package.json'...
+[11:25:46.369] Loaded content of 'C:/Users/Fernando/AppData/Local/Microsoft/TypeScript/4.1/package.json': {"private":true,"dependencies":{"types-registry":"^0.1.585"}}
+[11:25:46.369] Loaded content of 'C:/Users/Fernando/AppData/Local/Microsoft/TypeScript/4.1/package-lock.json'
+[11:25:46.370] Finished processing cache location 'C:/Users/Fernando/AppData/Local/Microsoft/TypeScript/4.1'
+[11:25:46.371] Process id: 13836
+[11:25:46.371] NPM location: "C:\Program Files\nodejs\npm" (explicit '--npmLocation' not  provided)
+[11:25:46.371] validateDefaultNpmLocation: false
+[11:25:46.372] Npm config file: C:/Users/Fernando/AppData/Local/Microsoft/TypeScript/4.1/package.json
+[11:25:46.373] Updating types-registry npm package...
+[11:25:46.373] Exec: "C:\Program Files\nodejs\npm" install --ignore-scripts types-registry@latest
+[11:25:48.053]     Succeeded. stdout:
+    
+    up to date, audited 2 packages in 781ms
+
+found 0 vulnerabilities
+
+[11:25:48.053] Updated types-registry npm package

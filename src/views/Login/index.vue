@@ -36,9 +36,7 @@ export default defineComponent({
       username: '',
       password: ''
     })
-
     const router = useRouter()
-
     const onSubmit = async () => {
       const response = await userStore.login(form.username, form.password)
       console.log(response)
