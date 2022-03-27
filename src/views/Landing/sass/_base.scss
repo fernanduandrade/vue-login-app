@@ -1,10 +1,5 @@
-$default: red;
-$aaa: #333;
+$default: #FCF7F5;
 
 .container {
-    background-color: $aaa;
-
-    &-test {
-	background-color: $default;
-    }
+    background-color: $default;
 }
