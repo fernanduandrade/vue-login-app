@@ -1,17 +1,30 @@
 <template>
   <div class="container">
     <Nav />
-    <!-- <p class="container">Lading Page foda</p> -->
-      <!-- <a href="/login">butao</a> -->
+    <div class="landing">
+      <div class="landing-header">
+        <p>get your</p>
+        <p>designer's</p>
+        <p>from here</p>
+        <div class="landing-search">
+          <input placeholder="search" type="text" />
+        </div>
+      </div>
+      <div class="lading-svg">
+        <HeaderImg />
+      </div>
+    </div>
   </div>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue'
 import Nav from '@/components/Nav/index.vue'
+import HeaderImg from '@/components/Icons/HeaderImg/index.vue'
 export default defineComponent({
   name: 'Landing',
   components: {
-    Nav
+    Nav,
+    HeaderImg
   }
 })
 </script>

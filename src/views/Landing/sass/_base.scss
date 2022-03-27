@@ -1,5 +1,21 @@
-$default: #FCF7F5;
+$default: #EEE7E5;
 
 .container {
     background-color: $default;
+    height: 100vh;
+}
+
+.landing {
+    margin-top: 10rem;
+    display: flex;
+
+    &-header {
+	display: flex;
+	flex: 1 1 0;
+	flex-direction: column;
+    }
+
+    &-svg {
+	flex: 1 1 0;
+    }
 }

@@ -30,7 +30,8 @@ export default defineComponent({
 
  html {
    box-sizing: border-box;
-   font-size: 62.5%; }
+   font-size: 62.5%;
+ }
  body {
    font-family: 'Inter', sans-serif;
    font-weight: 400;
