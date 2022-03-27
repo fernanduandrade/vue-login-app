@@ -3,11 +3,14 @@
     <Nav />
     <div class="landing">
       <div class="landing-header">
-        <p>get your</p>
-        <p>designer's</p>
-        <p>from here</p>
-        <div class="landing-search">
-          <input placeholder="search" type="text" />
+        <p class="landing-text__darker">get your</p>
+        <p class="landing-text__lighter">designer's</p>
+        <p class="landing-text__darker">from here</p>
+        <div class="search">
+          <input class="search-input" placeholder="search" type="text" />
+          <button class="search-button" title="pesquisar">
+            <i class="gg-search"></i>
+          </button>
         </div>
       </div>
       <div class="lading-svg">
