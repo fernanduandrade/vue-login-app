@@ -1,13 +1,13 @@
 <template>
+  <Nav />
   <div class="container">
-    <Nav />
     <div class="landing">
       <div class="landing-header">
-        <p class="landing-text__darker">get your</p>
-        <p class="landing-text__lighter">designer's</p>
-        <p class="landing-text__darker">from here</p>
+        <p class="landing-text__darker">use o contador</p>
+        <p class="landing-text__lighter">incrementador</p>
+        <p class="landing-text__darker">aqui</p>
         <div class="search">
-          <input class="search-input" placeholder="search" type="text" />
+          <input class="search-input" placeholder="pesquisar" type="text" />
           <button class="search-button" title="pesquisar">
             <i class="gg-search"></i>
           </button>
@@ -31,6 +31,6 @@ export default defineComponent({
   }
 })
 </script>
-<style scoped lang="scss">
+<style lang="scss">
  @import './sass/_base.scss'
 </style>

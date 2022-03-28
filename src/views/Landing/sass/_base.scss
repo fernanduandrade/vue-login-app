@@ -13,12 +13,10 @@ $default: #EEE7E5;
 	display: flex;
 	flex: 1;
 	flex-direction: column;
-	z-index: 2;
 	margin-left: 10rem;
     }
 
     &-svg {
-	z-index: -1;
 	flex: 1;
 	margin-right: 40rem;
     }

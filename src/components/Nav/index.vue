@@ -1,17 +1,38 @@
 <template>
   <div class="nav">
-    <div class="nav-logo">Pirm_media</div>
+    <div class="nav-logo">Contador</div>
     <div class="navigation">
       <ul class="navigation-bar">
         <li class="navigation-links">Home</li>
-        <li class="navigation-links">Services</li>
-        <li class="navigation-links">about us</li>
-        <li class="navigation-links">Contact us</li>
+        <li class="navigation-links">Serviços</li>
+        <li class="navigation-links">Sobre nos</li>
+        <li class="navigation-links">Contato</li>
       </ul>
     </div>
-    <div class="nav-singup">Login/Sign up</div>
+    <div
+      class="nav-access"
+      v-if="router.currentRoute.value.name !== 'login'"
+    >
+      <span @click="goToLogin">Login</span> | <span>Cadastrar</span>
+    </div>
+    <div v-else></div>
   </div>
 </template>
+<script lang="ts">
+import { defineComponent } from 'vue'
+import { useRouter } from 'vue-router'
+export default defineComponent({
+  name: 'Nav',
+  setup () {
+    const router = useRouter()
+    const goToLogin = () => {
+      router.push({ name: 'login' })
+    }
+
+    return { goToLogin, router }
+  }
+})
+</script>
 <style scoped lang="scss">
  @import './sass/_base.scss'
 </style>
