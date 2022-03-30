@@ -11,9 +11,9 @@
     </div>
     <div
       class="nav-access"
-      v-if="router.currentRoute.value.name !== 'login'"
+      v-if="routerName !== 'Login' && routerName !== 'Signup'"
     >
-      <span @click="goToLogin">Login</span> | <span>Cadastrar</span>
+      <span @click="goToLogin">Login</span> | <span @click="goToSignup">Cadastrar</span>
     </div>
     <div v-else></div>
   </div>
@@ -25,11 +25,10 @@ export default defineComponent({
   name: 'Nav',
   setup () {
     const router = useRouter()
-    const goToLogin = () => {
-      router.push({ name: 'login' })
-    }
-
-    return { goToLogin, router }
+    const goToLogin = () => router.push({ name: 'Login' })
+    const goToSignup = () => router.push({ name: 'Signup' })
+    const routerName = router.currentRoute.value.name
+    return { goToLogin, routerName, goToSignup, router }
   }
 })
 </script>

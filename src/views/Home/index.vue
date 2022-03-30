@@ -23,7 +23,7 @@ export default defineComponent({
 
     const logout = async () => {
       await userStore.logout()
-      router.push({ name: 'login' })
+      router.push({ name: 'Login' })
     }
 
     return { state, getters, increment, userStore, logout }

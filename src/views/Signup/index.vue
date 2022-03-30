@@ -2,18 +2,29 @@
   <Nav />
   <div class="container">
     <form class="form" @submit.prevent="onSubmit">
-      <h3 class="form-heading__main">Bem vindo de volta</h3>
-      <h4 class="form-heading__description">Por favor insira os seus dados para ganhar acesso.</h4>
+      <h3 class="form-heading__main">Crie sua conta</h3>
+      <div class="form-group">
+        <input
+          class="form-input"
+          v-model="form.name"
+          type="text"
+          required
+          placeholder="Nome completo"
+        />
+        <button class="form-button__icons">
+          <i class="gg-pen"></i>
+        </button>
+      </div>
       <div class="form-group">
         <input
           class="form-input"
           v-model="form.username"
           type="text"
           required
-          placeholder="Entre com seu usuário"
+          placeholder="Nome de usuário"
         />
         <button class="form-button__icons">
-          <i class="gg-mail"></i>
+          <i class="gg-profile"></i>
         </button>
       </div>
       <div class="form-group">
@@ -22,20 +33,20 @@
           v-model="form.password"
           type="password"
           required
-          placeholder="Entre com sua senha"
+          placeholder="Senha"
         />
         <button class="form-button__icons">
           <i class="gg-lock"></i>
         </button>
       </div>
-      <div class="response-message">
+      <div class="response">
         <span class="response-message">{{ userStore.state.error }}</span>
       </div>
-      <button class="form-button" type="submit">ENTRAR</button>
+      <button class="form-button" type="submit">REGISTRAR</button>
     </form>
     <div class="user">
       <span class="user-signup">
-        Não tem uma conta? <span title="Cadastrar" class="user-signup__button">Cadastra-se</span>
+        Possui uma conta? <span title="Login" class="user-signup__button">Entre aqui</span>
       </span>
       <p title="Home" class="user-goback" @click="goToHome">Voltar a página inicial</p>
     </div>
@@ -48,21 +59,22 @@ import { useRouter } from 'vue-router'
 import Nav from '@/components/Nav/index.vue'
 
 export default defineComponent({
-  name: 'Login',
+  name: 'SignUp',
   components: {
     Nav
   },
   setup () {
     const form = reactive({
+      name: '',
       username: '',
       password: ''
     })
     const router = useRouter()
     const onSubmit = async () => {
-      const response = await userStore.login(form.username, form.password)
+      const response = await userStore.register(form.name, form.username, form.password)
       console.log(response)
       if (response) {
-        router.push({ name: 'Home' })
+        router.push({ name: 'Login' })
       }
     }
 
@@ -74,7 +86,7 @@ export default defineComponent({
   }
 })
 </script>
-<style lang='scss'>
+<style lang='scss' scoped>
 @import "./sass/_base.scss";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap');
 </style>

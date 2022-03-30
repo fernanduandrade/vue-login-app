@@ -50,13 +50,14 @@ $default: #EEE7E5;
     &-button {
         width: 431px;
         height: 45px;
+        font-family: 'Poppins', sans-serif;
+        font-style: normal;
         color: #fff;
         background-color: #E22F08;
         border-radius: 1.2rem;
         border: none;
         margin-top: 25px;
-        font-family: 'Poppins', sans-serif;
-        font-style: normal;
+        transition: all .2s;
 
         &:hover {
             cursor: pointer;
@@ -78,17 +79,7 @@ $default: #EEE7E5;
         font-weight: 600;
         font-size: 2.4rem;
         line-height: 3.6rem;
-        margin-top: 6.5rem;
-    }
-
-    &-heading__description {
-        color: #8E8E8E;
-        font-family: 'Poppins';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 1.2rem;
-        line-height: 1.8rem;
-        margin-top: 10px;
+        margin-top: 3.5rem;
     }
 
     .gg-mail {
@@ -116,6 +107,90 @@ $default: #EEE7E5;
         position: relative;
         width: 18px;
         border-radius: 2px;
+      }
+
+      .gg-profile {
+        display: block;
+        box-sizing: border-box;
+        border: 2px solid;
+        color: #8E8E8E;
+        border-radius: 100px;
+    
+        &::after, &::before {
+          display: block;
+          box-sizing: border-box;
+          border: 2px solid;
+          border-radius: 100px;
+        }
+    
+        overflow: hidden;
+        transform: scale(var(--ggs, 1));
+        width: 22px;
+        height: 22px;
+        position: relative;
+    
+        &::after, &::before {
+          content: "";
+          position: absolute;
+          top: 2px;
+          left: 5px;
+          width: 8px;
+          height: 8px;
+        }
+    
+        &::after {
+          border-radius: 200px;
+          top: 11px;
+          left: 0px;
+          width: 18px;
+          height: 18px;
+        }
+      }
+
+      .gg-pen {
+        box-sizing: border-box;
+        position: relative;
+        display: block;
+        color: #8E8E8E;
+        transform: rotate(-45deg) scale(var(--ggs, 1));
+        width: 14px;
+        height: 4px;
+        border-right: 2px solid transparent;
+        box-shadow: 0 0 0 2px, inset -2px 0 0;
+        border-top-right-radius: 1px;
+        border-bottom-right-radius: 1px;
+        margin-right: -2px;
+    
+        &::after {
+          content: "";
+          display: block;
+          box-sizing: border-box;
+          position: absolute;
+        }
+    
+        &::before {
+          content: "";
+          display: block;
+          box-sizing: border-box;
+          position: absolute;
+          background: currentColor;
+          border-left: 0;
+          right: -6px;
+          width: 3px;
+          height: 4px;
+          border-radius: 1px;
+          top: 0;
+        }
+    
+        &::after {
+          width: 8px;
+          height: 7px;
+          border-top: 4px solid transparent;
+          border-bottom: 4px solid transparent;
+          border-right: 7px solid;
+          left: -11px;
+          top: -2px;
+        }
       }
 
       .gg-lock {
@@ -165,9 +240,8 @@ $default: #EEE7E5;
         &__button {
             color: #FF5733;
             &:hover {
-                cursor: pointer;
-              }
-            
+              cursor: pointer;
+            }
         }
     }
     &-goback {
@@ -177,18 +251,19 @@ $default: #EEE7E5;
         font-weight: 400;
         font-size: 1.2rem;
         color: #737171;
+        transition: all .2s;
 
         &:hover {
-            cursor: pointer;
-          }
+          cursor: pointer;
+        }
     }
 }
 
 .response{
-    &-message {
-        margin-top: 30px;
-        color: #FF5733;
-        font-size: 1.2rem;
-        font-weight: 600;
-    }
+  margin-top: 25px;
+  &-message {
+      color: #FF5733;
+      font-size: 1.2rem;
+      font-weight: 600;
+  }
 }

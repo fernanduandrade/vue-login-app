@@ -27,12 +27,22 @@ const actions = {
     const user = await Request.login(username, password)
     if (user == null) {
       state.error = 'Usuário não encontrado'
+      setTimeout(() => { state.error = '' }, 2000)
       return false
     }
 
     state.name = user.name
     state.username = username
     state.error = ''
+    return true
+  },
+  async register (name: string, username: string, password: string) : Promise<boolean> {
+    const response = await Request.register(name, username, password)
+    if (!response) {
+      state.error = 'Usuário já cadastrado'
+      setTimeout(() => { state.error = '' }, 5000)
+      return false
+    }
     return true
   }
 }
