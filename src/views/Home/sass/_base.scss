@@ -1,0 +1,46 @@
+$default: #EEE7E5;
+
+.container {
+  background-color: $default;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+
+.counter{
+  margin-top: 45px;
+  border-radius: 2rem;
+  width: 550px;
+  height: 400px;
+  box-shadow: 2px 2px 2px 2px #cccccc;
+  flex-direction: column;
+  display: flex;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+
+  &-text {
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 2rem;
+  }
+
+  &-button {
+    cursor: pointer;
+    padding: 1.4rem;
+    border-radius: 8px;
+    background-color: #c32a07;
+    transition: all .2s;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #fff;
+    border: none;
+    &:hover {
+      background-color: #9e2106;
+    }				
+  }
+}

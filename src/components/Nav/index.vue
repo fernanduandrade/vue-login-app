@@ -11,7 +11,13 @@
     </div>
     <div
       class="nav-access"
-      v-if="routerName !== 'Login' && routerName !== 'Signup'"
+      v-if="routerName === 'Home'"
+    >
+      <span class="nav-access__signup" @click="logout">Logout</span>
+    </div>
+    <div
+      v-else-if="routerName !== 'Login' && routerName !== 'Signup'"
+      class="nav-access"
     >
       <span @click="goToLogin">Login</span> | <span class="nav-access__signup" @click="goToSignup">Cadastrar</span>
     </div>
@@ -21,6 +27,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useRouter } from 'vue-router'
+import userStore from '@/store/user'
 export default defineComponent({
   name: 'Nav',
   setup () {
@@ -28,7 +35,11 @@ export default defineComponent({
     const goToLogin = () => router.push({ name: 'Login' })
     const goToSignup = () => router.push({ name: 'Signup' })
     const routerName = router.currentRoute.value.name
-    return { goToLogin, routerName, goToSignup, router }
+    const logout = async () => {
+      await userStore.logout()
+      router.push({ name: 'Login' })
+    }
+    return { goToLogin, routerName, goToSignup, router, logout }
   }
 })
 </script>
