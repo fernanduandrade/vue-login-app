@@ -13,7 +13,7 @@
       class="nav-access"
       v-if="routerName !== 'Login' && routerName !== 'Signup'"
     >
-      <span @click="goToLogin">Login</span> | <span @click="goToSignup">Cadastrar</span>
+      <span @click="goToLogin">Login</span> | <span class="nav-access__signup" @click="goToSignup">Cadastrar</span>
     </div>
     <div v-else></div>
   </div>

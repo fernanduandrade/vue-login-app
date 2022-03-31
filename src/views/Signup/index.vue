@@ -11,7 +11,7 @@
           required
           placeholder="Nome completo"
         />
-        <button class="form-button__icons">
+        <button class="form-button__icons" disabled>
           <i class="gg-pen"></i>
         </button>
       </div>
@@ -23,7 +23,7 @@
           required
           placeholder="Nome de usuário"
         />
-        <button class="form-button__icons">
+        <button class="form-button__icons" disabled>
           <i class="gg-profile"></i>
         </button>
       </div>
@@ -35,7 +35,7 @@
           required
           placeholder="Senha"
         />
-        <button class="form-button__icons">
+        <button class="form-button__icons" disabled>
           <i class="gg-lock"></i>
         </button>
       </div>
@@ -46,7 +46,7 @@
     </form>
     <div class="user">
       <span class="user-signup">
-        Possui uma conta? <span title="Login" class="user-signup__button">Entre aqui</span>
+        Possui uma conta? <span @click="goToLogin" title="Login" class="user-signup__button">Entre aqui</span>
       </span>
       <p title="Home" class="user-goback" @click="goToHome">Voltar a página inicial</p>
     </div>
@@ -82,7 +82,11 @@ export default defineComponent({
       router.push({ name: 'LandingPage' })
     }
 
-    return { form, userStore, onSubmit, goToHome }
+    const goToLogin = async () => {
+      router.push({ name: 'Login' })
+    }
+
+    return { form, userStore, onSubmit, goToHome, goToLogin }
   }
 })
 </script>

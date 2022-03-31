@@ -5,7 +5,7 @@
       <div class="landing-header">
         <p class="landing-text__darker">use o contador</p>
         <p class="landing-text__lighter">incrementador</p>
-        <p class="landing-text__darker">aqui</p>
+        <p class="landing-text__darker">aqui  ;)</p>
         <div class="search">
           <input class="search-input" placeholder="pesquisar" type="text" />
           <button class="search-button" title="pesquisar">
